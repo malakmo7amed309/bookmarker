@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bookmarker - save your favorite sites</title>
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+<body>
+    
+
+    <div class="container">
+
+
+     <div class="heading">
+        <h1  class="fw-bold  display-3 text-dark p-3 fst-italic text-center">Bookmarker</h1>
+        <hr class="my-4" style="border-top: 3px dotted #352E28;">
+    </div>
+   
+
+<div class="form">
+
+        <div class="form-heading text-center ">
+      <h1 class="fs-4">
+        <i class="fa-solid fa-bookmark"></i>
+        Bookmark your favorite sites
+        <i class="fa-solid fa-bookmark"></i>
+      </h1>
+    </div>
+      <form action="">
+  <div class="mb-3">
+      <label for="siteName" class="form-label fw-semibold">   <i class="fa-duotone fa-solid fa-bookmark"></i> Site Name</label>
+      <input type="text" id="siteName" class="form-control" placeholder="Bookmarker Name">
+    </div>
+
+      <div class="mb-3">
+      <label for="siteUrl" class="form-label fw-semibold">   <i class="fa-solid fa-link"></i> Website URL</label>
+      <input type="url" id="siteUrl" class="form-control" placeholder="Bookmarker URL">
+    </div>
+
+ <div class="text-center">
+  <button id="submitBtn" type="submit" class="btn btn-danger px-5">Submit</button>
+
+</div>
+      
+
+    <p id="formError" class="text-danger text-center d-none mt-2"></p>
+  </form>
+   <hr class="my-4" style="border-top: 3px dotted #352E28;">
+</div>
+
+
+<div class="table-add">
+  <table class="table  align-middle text-center">
+    <thead >
+      <tr>
+        <th scope="col">Index</th>
+        <th scope="col">Website Name</th>
+        <th scope="col">Visit</th>
+        <th scope="col">Delete</th>
+      </tr>
+    </thead>
+    <tbody>
+
+    </tbody>
+  </table>
+</div>
+
+
+
+</div>
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>

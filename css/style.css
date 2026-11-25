@@ -1,0 +1,11 @@
+
+ 
+body{
+    background-color: #F7ECDE;
+}
+
+.form-heading {
+  background: linear-gradient(to right, #56ab2f, #f2d50f); 
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
