@@ -14,7 +14,10 @@ persists between sessions.
 
 ## Features
 
-- Full CRUD: add, visit, edit and delete bookmarks
+- Full CRUD: add, visit, edit and delete bookmarks, with Undo after delete
+- Tags, tag filter, search, sort (newest, A to Z, pinned first) and pin favorites
+- Duplicate URL detection, copy link, JSON export and import
+- Card layout with colored letter avatars (no external icon fonts)
 - Input validation (site name length + URL format) with an inline error message
 - Automatic `https://` prefix when the URL has no protocol
 - Saved to localStorage, so bookmarks survive a refresh
@@ -24,7 +27,7 @@ persists between sessions.
 
 - HTML5, CSS3
 - Vanilla JavaScript (localStorage, DOM rendering)
-- Bootstrap 5 + Font Awesome
+- Custom CSS and inline SVG icons (no frameworks)
 
 ## Run locally
 

@@ -17,75 +17,43 @@
     <meta name="twitter:description" content="Save, visit and delete your favorite sites, stored in your browser with localStorage." />
     <meta name="twitter:image" content="https://malakmo7amed309.github.io/bookmarker/og-image.png" />
 
-    <link rel="stylesheet" href="css/all.min.css">
-    <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 </head>
 <body>
-    
-
-    <div class="container">
-
-
-     <div class="heading">
-        <h1  class="fw-bold  display-3 text-dark p-3 fst-italic text-center">Bookmarker</h1>
-        <hr class="my-4" style="border-top: 3px dotted #352E28;">
-    </div>
-   
-
-<div class="form">
-
-        <div class="form-heading text-center ">
-      <h1 class="fs-4">
-        <i class="fa-solid fa-bookmark"></i>
-        Bookmark your favorite sites
-        <i class="fa-solid fa-bookmark"></i>
-      </h1>
-    </div>
-      <form action="">
-  <div class="mb-3">
-      <label for="siteName" class="form-label fw-semibold">   <i class="fa-duotone fa-solid fa-bookmark"></i> Site Name</label>
-      <input type="text" id="siteName" class="form-control" placeholder="Bookmarker Name">
-    </div>
-
-      <div class="mb-3">
-      <label for="siteUrl" class="form-label fw-semibold">   <i class="fa-solid fa-link"></i> Website URL</label>
-      <input type="url" id="siteUrl" class="form-control" placeholder="Bookmarker URL">
-    </div>
-
- <div class="text-center">
-  <button id="submitBtn" type="submit" class="btn btn-danger px-5">Submit</button>
-
-</div>
-      
-
-    <p id="formError" class="text-danger text-center d-none mt-2"></p>
+<header class="hero">
+  <div class="wrap">
+    <h1>Bookmarker</h1>
+    <p>Save the sites you come back to. Everything stays in this browser.</p>
+  </div>
+</header>
+<main class="wrap">
+  <form id="bookmarkForm" class="add" novalidate>
+    <div class="field"><label for="siteName">Site name</label><input type="text" id="siteName" placeholder="e.g. MDN Web Docs" autocomplete="off"></div>
+    <div class="field"><label for="siteUrl">Website URL</label><input type="text" id="siteUrl" placeholder="developer.mozilla.org" autocomplete="off" inputmode="url"></div>
+    <div class="field"><label for="siteTag">Tag (optional)</label><input type="text" id="siteTag" placeholder="docs, jobs, tools" list="tagList" autocomplete="off"><datalist id="tagList"></datalist></div>
+    <button id="submitBtn" type="submit" class="btn primary">Save bookmark</button>
+    <button id="cancelBtn" type="button" class="btn ghost d-none">Cancel edit</button>
+    <p id="formError" class="error d-none" role="alert"></p>
   </form>
-   <hr class="my-4" style="border-top: 3px dotted #352E28;">
-</div>
 
+  <section class="tools" aria-label="Find and manage bookmarks">
+    <input type="search" id="search" placeholder="Search by name, URL or tag" aria-label="Search bookmarks">
+    <select id="tagFilter" aria-label="Filter by tag"><option value="">All tags</option></select>
+    <select id="sort" aria-label="Sort bookmarks">
+      <option value="added">Newest first</option>
+      <option value="name">Name A to Z</option>
+      <option value="pinned">Pinned first</option>
+    </select>
+    <button id="exportBtn" class="btn ghost" type="button">Export</button>
+    <button id="importBtn" class="btn ghost" type="button">Import</button>
+    <input type="file" id="importFile" accept="application/json" hidden>
+  </section>
 
-<div class="table-add">
-  <table class="table  align-middle text-center">
-    <thead >
-      <tr>
-        <th scope="col">Index</th>
-        <th scope="col">Website Name</th>
-        <th scope="col">Visit</th>
-        <th scope="col">Delete</th>
-      </tr>
-    </thead>
-    <tbody>
-
-    </tbody>
-  </table>
-</div>
-
-
-
-</div>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="main.js"></script>
+  <p id="count" class="count" aria-live="polite"></p>
+  <ul id="list" class="grid"></ul>
+  <p id="empty" class="empty d-none">No bookmarks yet. Add your first site above.</p>
+</main>
+<div id="toast" class="toast d-none" role="status"><span id="toastMsg"></span><button id="undoBtn" type="button">Undo</button></div>
+<script src="main.js"></script>
 </body>
 </html>
